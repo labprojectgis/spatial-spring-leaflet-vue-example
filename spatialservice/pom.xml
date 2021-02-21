@@ -1,24 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.7.RELEASE</version>
-        <relativePath /> <!-- lookup parent from repository -->
-    </parent>
-    <groupId>de.baerb</groupId>
-    <artifactId>spatialservice</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>spatialservice</name>
-    <description>spring boot service with geometry</description>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.7.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>de.baerb</groupId>
+	<artifactId>spatialservice</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>spatialservice</name>
+	<description>spring boot service with geometry</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
 
-    <dependencies>
-        <dependency>
+	<dependencies>
+       <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
@@ -37,24 +38,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.locationtech.jts</groupId>
-            <artifactId>jts-core</artifactId>
-            <version>1.16.1</version>
+		<dependency>
+		    <groupId>org.locationtech.jts</groupId>
+		    <artifactId>jts-core</artifactId>
+		    <version>1.16.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.graphhopper.external</groupId>
+		    <artifactId>jackson-datatype-jts</artifactId>
+		    <version>0.12-2.5-1</version>
         </dependency>
+        
         <dependency>
-            <groupId>com.graphhopper.external</groupId>
-            <artifactId>jackson-datatype-jts</artifactId>
-            <version>0.12-2.5-1</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.opengeo/geodb-app -->
-        <dependency>
-            <groupId>org.opengeo</groupId>
-            <artifactId>geodb-app</artifactId>
-            <version>0.9</version>
-        </dependency>
-
-        <!-- <dependency>
             <groupId>org.opengeo</groupId>
             <artifactId>geodb</artifactId>
             <version>0.9</version>
@@ -65,32 +60,41 @@
                     <artifactId>jts-core</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>        -->
+        </dependency>       
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+	</dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
-    <!-- <repositories>
-        <repository>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<repositories>
+        <!-- <repository>
             <id>boundless</id>
-            <url>http://repo.boundlessgeo.com/main/</url>
-        </repository>
-    </repositories> -->
-
-    <repositories>
-
+            <url>https://repo.boundlessgeo.com/main/</url>
+        </repository> -->
+        <!-- <repository>
+            <id>osgeo</id>
+            <name>Open Source Geospatial Foundation Repository</name>
+            <url>http://download.osgeo.org/webdav/geotools/</url>
+        </repository>        
+        <repository> 
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>opengeo</id>
+            <name>OpenGeo Maven Repository</name>
+            <url>http://repo.opengeo.org</url>
+        </repository>         -->
         <repository>
             <id>osgeo-alt</id>
             <url>https://repo.osgeo.org/repository/release/</url>
@@ -99,28 +103,7 @@
             <id>geomajas</id>
             <name>Geomajas Maven Repository</name>
             <url>http://maven.geomajas.org/(http://maven.geomajas.org/)</url>
-        </repository>
-
-        <repository>
-            <id>maven2-repository.dev.java.net</id>
-            <name>Java.net repository</name>
-            <url>http://download.java.net/maven/2</url>
-        </repository>
-        <repository>
-            <id>osgeo</id>
-            <name>Open Source Geospatial Foundation Repository</name>
-            <url>http://download.osgeo.org/webdav/geotools/</url>
-        </repository>
-        <repository>
-            <!--Add the snapshot repository here-->
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <id>opengeo</id>
-            <name>OpenGeo Maven Repository</name>
-            <url>http://repo.opengeo.org</url>
-        </repository>
-
-
+        </repository>        
     </repositories>
+
 </project>
